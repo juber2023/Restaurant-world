@@ -7,11 +7,35 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MainLayout from './Components/MainLayout.jsx';
+import Home from './Components/Home.jsx';
+import Login from './Components/Login.jsx';
+import Register from './Components/Register.jsx';
+import Blog from './Components/Blog.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>
+    element: <MainLayout></MainLayout>,
+    errorElement: <p>Not found</p>,
+    children:[
+      {
+        path:'/',
+        element:<Home></Home>,
+      },
+      {
+        path:'/login',
+        element:<Login></Login> ,
+      },
+      {
+        path:'/register',
+        element:<Register></Register>,
+      },
+      {
+        path:'/blog',
+        element:<Blog></Blog>,
+      },
+    ]
+    
   },
 ]);
 
