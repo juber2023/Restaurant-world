@@ -9,7 +9,7 @@ const Recipe = () => {
     const {id}=useParams()
     const AllChef=useLoaderData()
     useEffect(()=>{
-        fetch(`http://localhost:3000/chef/${id}`)
+        fetch(`https://server-api-two.vercel.app/chef/${id}`)
         .then(res=>res.json())
         .then(data=>SetRecipe(data))
     },[])

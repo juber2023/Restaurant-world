@@ -8,9 +8,9 @@ const Header = () => {
         <h1 className="grow font-bold text-2xl text-yellow-300">Food Lovers</h1>
         <div className="flex gap-5">
           <ActiveLink to="/">Home</ActiveLink>
-          <ActiveLink to="/login">Login</ActiveLink>
-          <ActiveLink to="/register">Register</ActiveLink>
           <ActiveLink to="/blog">Blog</ActiveLink>
+          <ActiveLink to="/register">Register</ActiveLink>
+          <ActiveLink to="/login">Login</ActiveLink>
         </div>
       </nav>
     </div>

@@ -12,6 +12,8 @@ import Login from './Components/Login.jsx';
 import Register from './Components/Register.jsx';
 import Blog from './Components/Blog.jsx';
 import Recipe from './Components/Recipe.jsx';
+import ContextApi from './Components/ContextApi.jsx';
+import NewRegister from './Components/NewRegister.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
-        loader:()=>fetch('http://localhost:3000/chef')
+        loader:()=>fetch('https://server-api-two.vercel.app/chef')
       },
       {
         path:'/login',
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/register',
-        element:<Register></Register>,
+        element:<NewRegister></NewRegister>,
       },
       {
         path:'/blog',
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
       {
         path:'/chef/:id',
         element:<Recipe></Recipe>,
-        loader:()=>fetch(`http://localhost:3000/chef`)
+        loader:()=>fetch(`https://server-api-two.vercel.app/chef`)
       },
     ]
     
@@ -48,6 +50,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ContextApi>
     <RouterProvider router={router} />
+    </ContextApi>
+    
   </React.StrictMode>,
 )
