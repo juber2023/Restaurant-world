@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData ,Link } from 'react-router-dom';
 
 const Home = () => {
     const chef=useLoaderData()
-    console.log(chef);
+    // console.log(chef);
     return (
         <div className='mb-5'>
             {/* banner section */}
@@ -32,8 +32,8 @@ const Home = () => {
                             <p>Numbers of recipes: {profile.num_recipes}</p>
                             <p>Likes: {profile.like}</p>
                             </div>
+                            <Link to={`/chef/${profile.id}`}><button className='bg-amber-300 py-2 font-bold text-lg w-full hover:bg-sky-500 duration-150 rounded-b-lg'>View Recipes</button></Link>
                             
-                            <button className='bg-amber-300 py-2 font-bold text-lg w-full hover:bg-sky-500 duration-150 rounded-b-lg'>View Recipes</button>
 
                         </div>
                         

@@ -11,6 +11,7 @@ import Home from './Components/Home.jsx';
 import Login from './Components/Login.jsx';
 import Register from './Components/Register.jsx';
 import Blog from './Components/Blog.jsx';
+import Recipe from './Components/Recipe.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
       {
         path:'/blog',
         element:<Blog></Blog>,
+      },
+      {
+        path:'/chef/:id',
+        element:<Recipe></Recipe>,
+        loader:()=>fetch(`http://localhost:3000/chef`)
       },
     ]
     
