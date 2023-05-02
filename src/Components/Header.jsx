@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="bg-black py-3">
       <nav className=" text-white flex w-3/4 mx-auto">
-        <h1 className="grow font-bold text-2xl">Food Lovers</h1>
+        <h1 className="grow font-bold text-2xl text-yellow-300">Food Lovers</h1>
         <div className="flex gap-5">
           <ActiveLink to="/">Home</ActiveLink>
           <ActiveLink to="/login">Login</ActiveLink>

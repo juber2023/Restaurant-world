@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const Recipe = () => {
     const [chef, SetChef]=useState([])
@@ -37,14 +39,22 @@ const Recipe = () => {
                 
             </div>
             <h1 className='text-center text-4xl font-bold mt-10 mb-5 '>Recipes</h1>
-            <div className='grid md:grid-cols-3 gap-5 md:w-3/4 mx-auto'>
+            <div className='grid md:grid-cols-2 gap-5 md:w-3/4 mx-auto'>
                 {recipe?.map((r,index)=>{
                     return <div key={index} className='border border-black shadow-lg rounded-lg p-5 relative'>
-                        <img className='h-[320px] w-full rounded-lg' src={r.photo} alt="" />
-                        <p>Recipe name: {r.recipe_name}</p>
-                        <p>Ingredients: {r.ingredients}</p>
-                        <p>Cooking method: {r.cooking_method}</p>
-                        <p className='mb-12'>{r.rating}</p>
+                        <img className='h-[320px] w-full rounded-lg mb-3' src={r.photo} alt="" />
+                        <p > <span className='font-semibold text-xl'>Recipe name:</span> {r.recipe_name}</p>
+                        <p><span className='font-semibold text-xl'>Ingredients:</span>  {r.ingredients}</p>
+                        <p><span  className='font-semibold text-xl'> Cooking method:</span> {r.cooking_method}</p>
+                        <div className='flex mb-10 space-x-2 mt-2'>
+                        <Rating
+                            style={{ maxWidth: 150 }}
+                            value={Math.round(r.rating?r.rating:0)}
+                            readOnly
+                        /> 
+                        <p className=''>{r.rating}</p>
+                        </div>
+                        
                         <button className='bg-amber-300 p-2 font-bold text-lg hover:bg-sky-500 duration-150 rounded-lg absolute bottom-0 w-full -translate-x-5'>Add to favorite</button>
                     </div>
                 })}
