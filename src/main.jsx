@@ -9,11 +9,11 @@ import {
 import MainLayout from './Components/MainLayout.jsx';
 import Home from './Components/Home.jsx';
 import Login from './Components/Login.jsx';
-import Register from './Components/Register.jsx';
 import Blog from './Components/Blog.jsx';
 import Recipe from './Components/Recipe.jsx';
 import ContextApi from './Components/ContextApi.jsx';
 import NewRegister from './Components/NewRegister.jsx';
+import PrivateRouter from './Components/PrivateRouter.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/chef/:id',
-        element:<Recipe></Recipe>,
+        element:<PrivateRouter><Recipe></Recipe></PrivateRouter>,
         loader:()=>fetch(`https://server-api-two.vercel.app/chef`)
       },
     ]

@@ -23,23 +23,8 @@ const NewRegister = () => {
             const loggedUser=result.user
             console.log(loggedUser);
             updateProfile(loggedUser,{displayName:name, photoURL:photo})
-            .then(()=>{
-
-            })
-            .then(error=>{
-                // SetLiveError(error.message)
-                console.error(error.message)
-            })
-
-            // updateProfile(loggedUser, {
-            //     displayName: {name}, photoURL:{photo}
-            //   }).then(() => {
-            //     // Profile updated!
-            //     // ...
-            //   }).catch((error) => {
-            //     // An error occurred
-            //     // ...
-            //   });
+            .then(()=>{})
+            .catch(error=>{})
 
             event.target.reset()
             setPassword('')
