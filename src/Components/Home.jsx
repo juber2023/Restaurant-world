@@ -1,4 +1,5 @@
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 import { useLoaderData ,Link } from 'react-router-dom';
 
 const Home = () => {
@@ -14,6 +15,13 @@ const Home = () => {
             <p className='font-bold text-2xl mt-2'>Fine foods & drinks</p>
             </div>
             </div>
+            {/* marquee  */}
+            <div className='text-2xl bg-red-100 rounded-lg p-5'>
+            <Marquee>
+            Bangladesh is home to many talented chefs who are known for their unique cooking styles and innovative use of spices and ingredients. One such chef is Juber Alam, a Bangladeshi-born chef who has gained international recognition for his exceptional culinary skills. Juber has worked in some of the world's most prestigious restaurants and has won numerous awards for his cooking, including two Michelin stars. He is known for his ability to combine traditional Bangladeshi flavors with modern cooking techniques, creating dishes that are both innovative and delicious. His passion for cooking and dedication to quality have earned him a reputation as one of the best chefs in the world.
+            </Marquee>
+            </div>
+            
 
             {/* chef section */}
             <h1 className='text-center text-4xl font-bold mt-10 mb-5'><span className='text-yellow-400 text-5xl'>O</span>ur <span className='text-yellow-400 text-5xl'>C</span>hefs</h1>
