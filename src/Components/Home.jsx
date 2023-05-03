@@ -24,7 +24,9 @@ const Home = () => {
             
 
             {/* chef section */}
-            <h1 className='text-center text-4xl font-bold mt-10 mb-5'><span className='text-yellow-400 text-5xl'>O</span>ur <span className='text-yellow-400 text-5xl'>C</span>hefs</h1>
+            <h1 className='text-center text-4xl font-bold mt-10'><span className='text-yellow-400 text-5xl'>O</span>ur <span className='text-yellow-400 text-5xl'>C</span>hefs</h1>
+            
+            <p className='text-center text-4xl font-bold mb-5'>--------------</p>
 
             <div className='grid md:grid-cols-3 md:w-3/4 mx-auto gap-4 '>
             {
@@ -48,6 +50,21 @@ const Home = () => {
                     </div>
                 })
             }
+            </div>
+            {/* Offer section  */}
+            <h1 className='text-center text-4xl font-bold mt-10'><span className='text-yellow-400 text-5xl'>T</span>odays <span className='text-yellow-400 text-5xl'>O</span>ffer</h1>
+            <div className='grid md:grid-cols-2 gap-10 mt-10 w-3/4 mx-auto border shadow-lg p-10'> 
+                <div>
+                    <img src="https://img.freepik.com/free-psd/food-social-media-promotion-instagram-banner-post-design-template_202595-475.jpg?w=826&t=st=1683134097~exp=1683134697~hmac=27715d2b423591da974e759144237429be82b684a41aec687225600906c9973b" alt="" />
+                </div>
+                <div>
+                    <p className='text-4xl font-bold mt-3 text-yellow-500'>OFFER DISHES</p>
+                    <p> <span className='text-2xl font-semibold'>Only 50$</span> <span className='line-through'>100$</span></p>
+                    <h1 className='text-xl font-semibold mt-5'>Chicken & Pasta</h1>
+                    <p>Chicken and pasta make for a delicious and satisfying meal. The tender chicken pairs well with a variety of pasta shapes and sauces, from classic spaghetti and marinara to creamy fettuccine alfredo. Whether baked, sautéed, or grilled, chicken and pasta is a versatile and easy-to-prepare dish for any occasion.</p>
+                    <button className='bg-yellow-400 p-2 rounded-xl font-semibold hover:bg-sky-300 duration-100 text-xl mt-2'>Order now</button>
+
+                </div>
             </div>
             
 
