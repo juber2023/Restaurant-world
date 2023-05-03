@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import Swal from 'sweetalert2';
 
 const Recipe = () => {
     const [chef, SetChef]=useState([])
     const [recipe, SetRecipe]=useState([])
     const {id}=useParams()
     const AllChef=useLoaderData()
+    const [click, SetClick]=useState(false)
     useEffect(()=>{
         fetch(`https://server-api-two.vercel.app/chef/${id}`)
         .then(res=>res.json())
@@ -18,6 +20,17 @@ const Recipe = () => {
             SetChef(AllChef?.find(n=>n.id==id))
         },[id,AllChef])
         console.log(recipe);
+
+        const handleToast=()=>{
+            SetClick(true)
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Recipe added',
+                showConfirmButton: false,
+                timer: 1500
+              })
+        }
     
     return (
         <div>
@@ -55,7 +68,7 @@ const Recipe = () => {
                         <p className=''>{r.rating}</p>
                         </div>
                         
-                        <button className='bg-amber-300 p-2 font-bold text-lg hover:bg-sky-500 duration-150 rounded-lg absolute bottom-0 w-full -translate-x-5'>Add to favorite</button>
+                        <button  onClick={handleToast} disabled={click} className={` p-2 font-bold text-lg  duration-150 rounded-lg absolute bottom-0 w-full -translate-x-5 ${click?'bg-gray-300 ':'hover:bg-sky-500 bg-amber-300 '}`}>Add to favorite</button>
                     </div>
                 })}
             </div>
