@@ -16,7 +16,7 @@ const Home = () => {
             </div>
             </div>
             {/* marquee  */}
-            <div className='text-2xl bg-red-100 rounded-lg p-5'>
+            <div className='text-2xl bg-yellow-100 rounded-lg p-5'>
             <Marquee>
             Bangladesh is home to many talented chefs who are known for their unique cooking styles and innovative use of spices and ingredients. One such chef is Juber Alam, a Bangladeshi-born chef who has gained international recognition for his exceptional culinary skills. Juber has worked in some of the world's most prestigious restaurants and has won numerous awards for his cooking, including two Michelin stars. He is known for his ability to combine traditional Bangladeshi flavors with modern cooking techniques, creating dishes that are both innovative and delicious. His passion for cooking and dedication to quality have earned him a reputation as one of the best chefs in the world.
             </Marquee>
@@ -24,9 +24,7 @@ const Home = () => {
             
 
             {/* chef section */}
-            <h1 className='text-center text-4xl font-bold mt-10'><span className='text-yellow-400 text-5xl'>O</span>ur <span className='text-yellow-400 text-5xl'>C</span>hefs</h1>
-            
-            <p className='text-center text-4xl font-bold mb-5'>--------------</p>
+            <h1 className='text-center text-4xl font-bold my-10'><span className='text-yellow-400 text-5xl'>O</span>ur <span className='text-yellow-400 text-5xl'>C</span>hefs</h1>
 
             <div className='grid md:grid-cols-3 md:w-3/4 mx-auto gap-4 '>
             {
@@ -53,7 +51,7 @@ const Home = () => {
             </div>
             {/* Offer section  */}
             <h1 className='text-center text-4xl font-bold mt-10'><span className='text-yellow-400 text-5xl'>T</span>odays <span className='text-yellow-400 text-5xl'>O</span>ffer</h1>
-            <div className='grid md:grid-cols-2 gap-10 mt-10 w-3/4 mx-auto border shadow-lg p-10'> 
+            <div className='grid md:grid-cols-2 gap-10 mt-10 md:w-3/4 mx-auto border shadow-lg p-10'> 
                 <div>
                     <img src="https://img.freepik.com/free-psd/food-social-media-promotion-instagram-banner-post-design-template_202595-475.jpg?w=826&t=st=1683134097~exp=1683134697~hmac=27715d2b423591da974e759144237429be82b684a41aec687225600906c9973b" alt="" />
                 </div>

@@ -14,12 +14,13 @@ import Recipe from './Components/Recipe.jsx';
 import ContextApi from './Components/ContextApi.jsx';
 import NewRegister from './Components/NewRegister.jsx';
 import PrivateRouter from './Components/PrivateRouter.jsx';
+import Error from './Components/Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <p>Not found</p>,
+    errorElement: <Error></Error>,
     children:[
       {
         path:'/',
