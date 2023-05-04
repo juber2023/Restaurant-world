@@ -27,7 +27,8 @@ const Header = () => {
           {
               user?
               <div className="flex space-x-4 items-center">
-                <p className="cursor-pointer" onClick={handleLogOut}>Logout</p> <img className="h-12 w-12 rounded-full cursor-pointer" src={user.photoURL} alt="" title={user.displayName} />
+                <p className="cursor-pointer" onClick={handleLogOut}>Logout</p>
+                 <img className=" h-12 w-12 rounded-full cursor-pointer" src={user.photoURL} alt="" title={user.displayName} />
               </div>
               :<ActiveLink to="/login">Login</ActiveLink>
               
