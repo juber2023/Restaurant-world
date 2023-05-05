@@ -1,9 +1,11 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 import { useLoaderData ,Link } from 'react-router-dom';
+import useTitle from './Usetitle';
 
 const Home = () => {
     const chef=useLoaderData()
+    useTitle('Home')
     // console.log(chef);
     return (
         <div className='mb-5'>

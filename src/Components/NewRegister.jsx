@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from './ContextApi';
 import {FaCheck } from "react-icons/fa";
 import { updateProfile } from 'firebase/auth';
+import useTitle from './Usetitle';
 
 const NewRegister = () => {
     const {user, createUser,}=useContext(UserContext)
@@ -10,6 +11,7 @@ const NewRegister = () => {
     const [liveError, SetLiveError]=useState('')
     const [success, SetSuccess]=useState('')
     const refPassword=useRef()
+    useTitle('Register')
 
     const handleRegister=event=>{
         event.preventDefault()

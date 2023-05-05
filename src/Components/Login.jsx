@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from './ContextApi';
 import { FcGoogle } from "react-icons/fc";
 import { GoMarkGithub } from "react-icons/go";
+import useTitle from './Usetitle';
 
 
 const Login = () => {
@@ -12,6 +13,7 @@ const Login = () => {
     const navigate=useNavigate()
     const location=useLocation()
     const from=location.state?.from?.pathname||'/'
+    useTitle('Login')
         const handleLogIn=(e)=>{
             e.preventDefault()
             SetSuccess('')
@@ -34,7 +36,7 @@ const Login = () => {
         const handleGoogle=()=>{
             googleLogIn()
             .then(result=>{
-
+                navigate(from, {replace:true})
             })
             .catch(error=>{
     
@@ -43,7 +45,7 @@ const Login = () => {
         const handleGithub=()=>{
             githubLogIn()
             .then(result=>{
-
+                navigate(from, {replace:true})
             })
             .catch(error=>{
     

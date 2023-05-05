@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import Swal from 'sweetalert2';
+import useTitle from './Usetitle';
 
 const Recipe = () => {
     const [chef, SetChef]=useState([])
@@ -10,6 +11,7 @@ const Recipe = () => {
     const {id}=useParams()
     const AllChef=useLoaderData()
     const [click, SetClick]=useState(false)
+    useTitle('Recipes')
     useEffect(()=>{
         fetch(`https://server-api-two.vercel.app/chef/${id}`)
         .then(res=>res.json())

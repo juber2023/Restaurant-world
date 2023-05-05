@@ -1,8 +1,10 @@
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import React from 'react';
 import PDFFile from './Pdf';
+import useTitle from './Usetitle';
 
 const Blog = () => {
+    useTitle('Blog')
     return (
         <div>
                         <PDFDownloadLink document={<PDFFile />} filename="FORM">
