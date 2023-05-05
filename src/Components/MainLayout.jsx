@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './Header';
 import { Outlet, useNavigation } from "react-router-dom";
 import Footer from './Footer';
-import LazyLoad from 'react-lazy-load';
 
 const MainLayout = () => {
     const spinner=useNavigation()
@@ -14,7 +13,7 @@ const MainLayout = () => {
                 <p className='animate-spin w-10 h-10 border-8 border-sky-700 border-dotted rounded-full mt-5'></p>
                 <p>ading...</p>
             </div>:''}</div>
-            <LazyLoad><Outlet></Outlet></LazyLoad>
+            <Outlet></Outlet>
             
 
             <div className=' bg-black text-white mt-5'>

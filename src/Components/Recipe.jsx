@@ -4,6 +4,7 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import Swal from 'sweetalert2';
 import useTitle from './Usetitle';
+import LazyLoad from 'react-lazy-load';
 
 const Recipe = () => {
     const [chef, SetChef]=useState([])
@@ -37,6 +38,7 @@ const Recipe = () => {
     return (
         <div>
             {/* banner section */}
+            
             <div className='h-[calc(100vh-70px)] bg-cover bg-no-repeat text-white' style={{backgroundImage:`url("https://img.freepik.com/free-photo/tortilla-wrap-with-falafel-fresh-salad-vegan-tacos-vegetarian-healthy-food-top-view_2829-14380.jpg?w=1380&t=st=1683000549~exp=1683001149~hmac=8fa669bea388da9af741d7e365e4f07af3059ce8d7e659e3cc36c5a81a8a67a0")`}}>
 
                 <div className='grid grid-cols-2 justify-center items-center w-3/4 mx-auto gap-10 h-full'>
@@ -57,7 +59,8 @@ const Recipe = () => {
             <div className='grid md:grid-cols-2 gap-5 md:w-3/4 mx-auto'>
                 {recipe?.map((r,index)=>{
                     return <div key={index} className='border border-black shadow-lg rounded-lg p-5 relative'>
-                        <img className='h-[320px] w-full rounded-lg mb-3' src={r.photo} alt="" />
+                        <LazyLoad offset={300}><img className='h-[320px] w-full rounded-lg mb-3' src={r.photo} alt="" /></LazyLoad>
+                        
                         <p > <span className='font-semibold text-xl'>Recipe name:</span> {r.recipe_name}</p>
                         <p><span className='font-semibold text-xl'>Ingredients:</span>  {r.ingredients}</p>
                         <p><span  className='font-semibold text-xl'> Cooking method:</span> {r.cooking_method}</p>
